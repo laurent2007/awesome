@@ -1,0 +1,267 @@
+<!-- <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/uikit.min.css">
+    <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/uikit.gradient.min.css">
+    <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/awesome.css" />
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/jquery.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/sha1.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/uikit.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/sticky.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/vue.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/awesome.js"></script> -->
+
+
+
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>helloform_Vue</title>  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
+       
+
+
+    <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/uikit.min.css">
+    <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/uikit.gradient.min.css">
+    <link rel="stylesheet" href="c:/python36/awesome-python3-webapp/www/static/css/awesome.css" />
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/jquery.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/sha1.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/uikit.min.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/sticky.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="c:/python36/awesome-python3-webapp/www/static/js/awesome.js"></script>
+
+
+
+
+
+
+    </head>  
+    <body>  
+       
+ <body>  
+        <div id="example-1">
+          <button v-on:click="counter += 1">Add 1</button>
+          <p>The button above has been clicked {{ counter }} times.</p>
+        </div>
+   
+        
+    </body>  
+
+     <script>  
+     var vm = new Vue({  
+            el: '#example-1',  
+            data: {  
+                  
+                counter:0
+            },  
+            
+        })  
+
+
+    </script>  
+
+
+
+<div class="uk-width-2-3">
+        <h1>欢迎注册</h1>
+        <div id="vm" class="uk-form uk-form-stacked" >
+            <div class="uk-alert uk-alert-danger uk-hidden"></div>
+            <div class="uk-form-row">
+                <label class="uk-form-label">名字：</label>
+                <div class="uk-form-controls">
+                    <input type="text" v-model="name" maxlength="50" placeholder="名字" class="uk-width-1-1">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label">电子邮件：</label>
+                <div class="uk-form-controls">
+                    <input type="text" v-model="email" maxlength="50" placeholder="your-name@example.com" class="uk-width-1-1">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label">输入口令：</label>
+                <div class="uk-form-controls">
+                    <input type="password" v-model="password1" maxlength="50" placeholder="输入口令" class="uk-width-1-1">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <label class="uk-form-label">重复口令：</label>
+                <div class="uk-form-controls">
+                    <input type="password" v-model="password2" maxlength="50" placeholder="重复口令" class="uk-width-1-1">
+                </div>
+            </div>
+            <div class="uk-form-row">
+                <button type="submit" class="uk-button uk-button-primary" v-on:click="sub"   ><i class="uk-icon-user"></i>注册</button>
+            </div>
+           
+        </div>
+    </div>
+
+
+
+
+        
+    </body>  
+
+
+<script>
+    function validateEmail(email){
+        var re = /^[a-z0-9\.\-\_]+\@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+){1,4}$/;
+        return re.test(email.toLowerCase());
+    }
+   
+        var vm = new Vue({
+            el: '#vm',
+            data: {
+                name:'',
+                email:'',
+                password1:'',
+                password2:''
+            },
+            methods:{
+                sub:function(){
+                    //var $form = $('#vm');
+                    this.name = '333ffff';
+                    /*if (! this.name.trim()){
+                        return $form.showFormError('请输入名字');
+                    }  */
+                }
+            }
+        });
+        //$('#vm').show();
+    
+
+</script>
+
+
+
+   
+
+</html>   
+<!-- 
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>helloform_Vue</title>  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+       
+    </head>  
+    <body>  
+        <div id="example-1">
+          <button v-on:click="counter += 1">Add 1</button>
+          <p>The button above has been clicked {{ counter }} times.</p>
+        </div>
+   
+        
+    </body>  
+
+     <script>  
+     var vm = new Vue({  
+            el: '#example-1',  
+            data: {  
+                  
+                counter:0
+            },  
+            
+        })  
+
+
+    </script>  
+</html>   
+  -->
+
+
+<!-- <!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>helloform_Vue</title>  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <style>
+        .show{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .wrap{
+            width: 100px;
+            height: 100px
+        }
+    </style>
+    </head>  
+    <body>  
+        <div class="show" id="app">
+            <div class="wrap">
+                <button class="btn btn-danger" @click="click">删 除</button>
+                <p>{{ msg }}333</p>
+                <button onclick="alert('sssfff')">sssfff</button>
+            </div>
+        </div>
+   
+        
+    </body>  
+
+     <script>  
+        var vm = new Vue({  
+            el: '#app',  
+            data: {  
+                  
+                msg: ''
+            },  
+            methods: {  
+                click () {  
+                    var t = this;
+                    t.message = 'click me';
+                }  
+            },  
+        })  
+
+
+    </script>  
+</html>   -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test users - Awesome Python Webapp</title>
+    
+    <script src="/static/js/vue.min.js"></script>
+    <script type="text/javascript">
+        
+        var vm = new Vue({
+          el: '#example',
+          data: {
+            message: '提交'
+          },
+          methods: {
+            submit: function () {
+              var self = this
+              self.message = '正在提交...'
+
+              setTimeout(function () {
+                  self.message = '提交'
+              }, 5000)
+            }
+          }
+        })
+
+
+    </script>
+</head>
+<body>
+   <div id="example">
+       <button type="submit" v-on:clcik="submit" >{{message}}</button>
+   </div>
+</body>
+</html> -->

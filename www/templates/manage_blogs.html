@@ -1,0 +1,180 @@
+{% extends '__base__.html' %}
+
+{% block title %} 日志管理 {% endblock %}
+
+{% block beforehead %}
+<script type="text/javascript">
+	function initVM(data){
+		$('#vm').show();
+		var vm = new Vue({
+			el:'#vm',
+			data:{
+				blogs:data.blogs,
+				page:data.page,
+				checked: false,
+				checkbox:{
+					checked :false,
+					items:{}
+				},
+				checkboxModel:['001524635817842d7ef00185f574cc98125b4f7a7f1084a000']
+			},
+			methods:{
+				edit_blog:function(blog){
+					location.assign('/manage/blogs/edit?id=' + blog.id);
+				},
+				delete_blog:function(blog){
+					if (confirm('确认要删除“' + blog.name + '"?删除后不可恢复！')){
+						postJSON('/api/blogs/'+blog.id+'/delete',function(err,r){
+							if(err)
+							{
+								return alert(err.message || err.error || err);
+							}
+							refresh();
+						});
+					}
+				},
+				checkedOne:function(){
+					// console.log(obj.id);
+					// console.log(this.checkedModel);
+					var unchecked = 0;
+					var _this = this;
+					this.blogs.forEach(function(item){
+						unchecked += (! _this.checkbox.items[item.id]) || 0;
+					});
+					//console.log(unchecked);
+					_this.checkbox.checked = unchecked > 0 ? false:true;
+				},
+				checkedAll:function(){
+					var _this = this;
+					//console.log(_this.blogs);
+					console.log(this.checkbox.checked);
+					//_this.checkbox.checked = true;
+					this.blogs.forEach(function(item){
+						console.log(item.id);
+						console.log(_this.checkbox.checked);
+						_this.checkbox.items[item.id] = _this.checkbox.checked;
+						//_this.checkbox.checked = false;
+						//console.log(_this.checkbox.items);
+					});
+					/*var _this = this;
+					if(_this.checkbox.checked){
+						//实现反选
+						_this.checkboxModel = [];
+						 //console.log("no")
+					}
+					else{
+						_this.checkboxModel = [];
+						_this.blogs.forEach(function(item){
+							_this.checkboxModel.push(item.id);
+							 console.log(item.id);
+						});
+					}*/
+				},
+				delete_blogs:function(blog){
+					var blog_ids = [] ;
+					var _this = this;
+					this.blogs.forEach(function(item){
+						if (_this.checkbox.items[item.id]){
+							//console.log(item.id);
+							blog_ids.push(item.id);
+						}
+					});
+					//console.log(blog_ids);
+					if(confirm("确认要删除这"+blog_ids.length+"条日志吗？")){
+						$.each(blog_ids,function(index,value){
+						  		
+						  		postJSON('/api/blogs/'+ value +'/delete',function(err,r){
+									if(err)
+									{
+										//return alert(err.message || err.error || err);
+										fatal(err);
+									}
+								});
+								
+						});
+						
+						refresh();
+					}
+
+				}
+			}
+		});
+	}
+
+	$(function(){
+		getJSON('/api/blogs',{
+			page: {{ page_index }}
+		},function(err,results){
+			if(err){
+				return fatal(err);
+			}
+			$('#loading').hide();
+			initVM(results);
+		});
+	});
+
+		
+
+</script>
+{% endblock %}
+
+{% block content %}
+	<div class="uk-width-1-1 uk-margin-bottom">
+		<div class="uk-panel uk-panel-box">
+			<ul class="uk-breadcrumb">
+				<li><a href="/manage/comments">评论</a></li>
+				<li class="uk-active">日志</li>
+				<li><a href="/manage/users">用户</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="error" class="uk-width-1-1">
+	</div>
+
+	<div id="loading" class="uk-width-1-1 uk-text-center">
+		<span><i class="uk-icon-spinner uk-icon-medium uk-icon-spin"></i>正在加载...</span>
+	</div>
+
+	<div id="vm" class="uk-width-1-1">
+		<a href="/manage/blogs/create" class="uk-button uk-button-primary"><i class="uk-icon-plus"></i>新日志</a>
+
+		<table class="uk-table uk-table-hover">
+			<thead>
+				<tr>
+					<th class="uk-width-1-10"><input type="checkbox" v-on="click: checkedAll()" v-model="checkbox.checked" title="未完成">全选？</th>
+					<th class="uk-width-5-10">标题 / 摘要</th>
+					<th class="uk-width-1-10">作者</th>
+					<th class="uk-width-2-10">创建时间</th>
+					<th class="uk-width-1-10">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-repeat="blog:blogs">
+					<td>
+						<input type="checkbox" name="blog_chk_box"  v-on="click: checkedOne()" v-model="checkbox.items[blog.id]" >
+						<!-- <br><span v-text="blog.id"> -->
+					</td>
+					<td>
+						<a target="_blank" v-attr="href: '/blog/' + blog.id" v-text="blog.name" ></a>
+					</td>
+					<td>
+						<a target="_blank" v-attr="href: '/user/' + blog.user_id" v-text="blog.user_name" ></a>
+					</td>
+					<td>
+						<span v-text="blog.created_at.toDateTime()"></span>
+					</td>
+					<td>
+						<a href="#0" v-on="click: edit_blog(blog)" title="编辑"><i class="uk-icon-edit"></i></a>
+						<a href="#0" v-on="click: delete_blog(blog)" title="删除"><i class="uk-icon-trash-o"></i></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- <span>Checked names: {{ checkedModel }}</span> -->
+		<a href="#0" class="uk-button uk-button-danger" v-on="click: delete_blogs()"><i class="uk-icon-remove"></i>删除日志</a>		
+
+		<div v-component="pagination" v-with="page"></div>
+	</div>
+
+{% endblock %}

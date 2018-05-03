@@ -1,0 +1,6 @@
+cd c:\program files\mysql\mysql server 5.7\bin
+
+mysql -h localhost -u root -p
+
+cd c:\python36\awesome-python3-webapp\www
+
