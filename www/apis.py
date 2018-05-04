@@ -11,7 +11,8 @@ import json,logging,inspect,functools
 
 class Page(object):
 	'''
-	Page OBject for display pages
+	Page OBject for display pages test 
+	测试分支部分文件合并功能
 	'''
 
 	def __init__(self,item_count,page_index=1,page_size=10):
