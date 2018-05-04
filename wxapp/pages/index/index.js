@@ -35,7 +35,7 @@ Page({
 
   onLoad: function () {
     //api获取线上数据
-    //this.getProList();
+    this.getProList();
   },
   toDetail:function(e){
     //console.log(e);
