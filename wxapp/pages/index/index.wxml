@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+<view class='items-list'>
+  <view class='pro-item' wx:for="{{ proList }}" bindtap='toDetail' data-index="{{index}}">
+    <image src="{{ item.logo}}" class='pro-logo'></image>
+    <view class='pro-body'>
+      <view class='pro-title'>{{ item.title}}</view>
+      <text class='pro-desc'>{{ item.desc}}</text>
+      <view class='pro-footer'>
+        <image class='btn-detail' src='/images/btn_detail.png'></image>
+        <button open-type="contact" class='btn-ask' ><image src='/images/btn_ask.png'></image></button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+

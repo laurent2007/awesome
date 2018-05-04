@@ -1,0 +1,22 @@
+<!--pages/join/join.wxml-->
+
+<image src='/images/about.jpg' class='banner'></image>
+
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法</text>
+</view>
+
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法</text>
+</view>
+
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法\n水电费三分，是覅否佛法，酸辣粉律师代理费是劳动法</text>
+</view>
+
+<view class='btn-phone'>
+  <button bindtap='tell'>电话咨询</button>
+</view>
