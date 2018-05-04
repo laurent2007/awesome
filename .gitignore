@@ -1,0 +1,4 @@
+www/__pycache__/
+www/pymonitor.py
+www/config_default.py
+www/config_override.py
