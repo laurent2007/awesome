@@ -381,8 +381,8 @@ def api_microapp_getlist():
 	for x in range(1,4):
 		L.append({
 			"logo":"/images/pro_0%s.jpg" % x,
-			"title":"测试标题%s" % x,
-			"desc":"测试内容%s\n测试内容" % x
+			"title":"房屋贷%s" % x,
+			"desc":"房屋贷内容%s\n房屋贷内容" % x
 		})		
 
 	return dict(data=L)

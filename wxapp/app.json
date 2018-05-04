@@ -8,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#2e5e86",
-    "navigationBarTitleText": "信贷DEMO",
+    "navigationBarTitleText": "心游记",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
