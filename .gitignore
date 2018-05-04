@@ -1,0 +1,5 @@
+*.pyc
+www/__pycache__/
+www/config_override.py
+www/config_default.py
+www/pymonitor.py
