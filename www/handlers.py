@@ -372,3 +372,17 @@ def signout(request):
 	r.set_cookie(COOKIE_NAME,'-deleted-',max_age=0,httponly=True)
 	logging.info('user signed out')
 	return r
+
+
+# part4.小程序测试数据接口调用
+@get('/api/microapp/getlist')
+def api_microapp_getlist():
+	L = []
+	for x in range(1,4):
+		L.append({
+			"logo":"/images/pro_0%s.jpg" % x,
+			"title":"测试标题%s" % x,
+			"desc":"测试内容%s\n测试内容" % x
+		})		
+
+	return dict(data=L)
