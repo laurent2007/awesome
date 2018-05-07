@@ -47,7 +47,7 @@ Page({
       url: '/pages/detail/detail?idx=' + index,
     })
     //传值 本地缓存
-    //wx.setStorageSync(key, data);
+    wx.setStorageSync("indx", index);
   },
   getProList:function(){
     var self = this;

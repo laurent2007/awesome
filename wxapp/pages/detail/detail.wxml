@@ -1,11 +1,15 @@
 <!--pages/detail/detail.wxml-->
-<view class='block-model'>
-  <view class='block-img'>
-    <image src='/images/banner_01s.jpg' ></image>
+
+<block wx:for="{{array}}">
+  <view class='block-model' data-id="{{id}}">
+    <view class='block-img'>
+      <image src='{{item.images}}' ></image>
+    </view>
+    <view class='block-title'>{{item.title}}</view>
+    <view class='block-author'>Laurent.Huang</view>
+    <text class='block-desc'>{{item.desc}}</text>
+    <view class='block-info' title='发布时间或者其他信息'>节选与百度百科，发布于2018-05-07</view>
+    <view class='block-footer'></view>
   </view>
-  <view class='block-title'>谁说四川山水不能甲天下</view>
-  <view class='block-author'></view>
-  <view class='block-desc'></view>
-  <view class='block-info' title='发布时间或者其他信息'></view>
-  <view class='block-footer'></view>
-</view>
+</block>
+
