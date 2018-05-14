@@ -57,3 +57,10 @@ swiper image{
   width: 100%;
   height: 100%;
 }
+.position{
+  padding: 6rpx;
+  text-align: left;
+  font-size: 28rpx;
+  color: red;
+  margin-left: 14rpx;
+}
