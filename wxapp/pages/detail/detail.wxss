@@ -2,6 +2,7 @@
 .block-model{
   overflow: hidden;
   padding: 10px;
+  display: block;
 }
 .block-img{
   width: 100%;
@@ -22,13 +23,21 @@
 
 }
 .block-author{
-
+  font-size: 28rpx;
+  color: #9a9a9a;
+  text-align: center;
+  margin-top: 20rpx;
 }
 .block-desc{
-
+  font-size: 30rpx;
+  margin-top: 20rpx;
 }
 .block-info{
-
+  font-size: 28rpx;
+  color: #9a9a9a;
+  text-align: right;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
 }
 .block-footer{
 
