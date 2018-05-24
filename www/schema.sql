@@ -1,5 +1,5 @@
+﻿
 
-'手动创建，如有需要执行此脚本'
 
 drop database if exists awesome;
 
@@ -7,7 +7,7 @@ create database awesome;
 
 use awesome;
 
-grant select, insert, update, delete on awesome.* to 'www-data'@'localhost' identified by 'www-data';
+grant select, insert, update, delete on awesome.* to 'root'@'localhost' identified by 'MyNewPass4!';
 
 create table users (
     `id` varchar(50) not null,

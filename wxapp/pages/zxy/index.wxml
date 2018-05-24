@@ -1,0 +1,33 @@
+<!--pages/zxy/index.wxml-->
+
+<view class='main-body'>
+  <view class='new-input-block'>
+    <view class='input-row'>
+      <label class='red'>*Title:</label>
+      <input auto-focus placeholder='输入标题' type='text' name="title"></input>
+    </view>
+    <view class='input-row'>
+      <label>summary:</label>
+      <input placeholder='输入概要' name="summary"></input>
+    </view>
+    <view class='input-row'>
+      <label>auth_id:</label>
+      <input placeholder='输入作者ID（可以为空）' name="auth_id"></input>
+    </view>
+    <view class='input-row'>
+      <label>auth_name:</label>
+      <input placeholder='输入作者姓名（可以为空）' name="auth_name"></input>
+    </view>
+    <view class='input-row'>
+      <label>auth_avatar:</label>
+      <input placeholder='输入作者头像路径（可以为空）' name="auth_avatar"></input>
+    </view>
+    <view class='input-row'>
+      <label>content:</label>
+      <input placeholder='输入具体内容' name="content"></input>
+    </view>
+    <view class='input-row input-button'>
+      <button size='mini' plain='true' type='primary' bindtap='saveForm'>新  增</button>
+    </view>
+  </view>
+</view>

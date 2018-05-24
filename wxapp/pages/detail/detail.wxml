@@ -1,4 +1,3 @@
-<!--pages/detail/detail.wxml-->
 
 <block wx:for="{{array}}">
   <view class='block-model' data-id="{{id}}">
@@ -6,8 +5,8 @@
       <image src='{{item.images}}' ></image>
     </view>
     <view class='block-title'>{{item.title}}</view>
-    <view class='block-author'>Laurent.Huang</view>
-    <text class='block-desc'>{{item.desc}}</text>
+    <view class='block-author'>作者：Laurent.Huang</view>
+    <rich-text class='block-desc'>{{item.desc}}</rich-text>
     <view class='block-info' title='发布时间或者其他信息'>节选与百度百科，发布于2018-05-07</view>
     <view class='block-footer'></view>
   </view>

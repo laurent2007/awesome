@@ -1,0 +1,4 @@
+<!--pages/qrcode/index.wxml-->
+<view class='content-block'>
+  <image src="/images/qr_code.jpg" class='qrImage'></image>
+</view>

@@ -12,16 +12,20 @@
   </view>
 </view> -->
 
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
     </swiper-item>
   </block>
 </swiper>
 
-
+<view class='search-city'>
+  <button class='city-button' bindtap='selectCity'>选择城市</button>
+  <view class='city-content' wx:if="{{selectedCity}}">
+    <text class='city-text'>已选：{{selectedCity}}</text>
+  </view>
+</view>
 
 <view class='items-list'>
   <view class='pro-item' wx:for="{{ proList }}" bindtap='toDetail' data-index="{{index}}">
@@ -31,14 +35,10 @@
       <text class='pro-desc'>{{ item.desc}}</text>
       <view class='pro-footer'>
         <image class='btn-detail' src='/images/btn_detail.png'></image>
-        <button open-type="contact" class='btn-ask' ><image src='/images/btn_ask.png'></image></button>
+        <button open-type="contact" class='btn-ask'>
+          <image src='/images/btn_ask.png'></image>
+        </button>
       </view>
     </view>
   </view>
 </view>
-
-<!-- <view class='position'></view> -->
-
-
-
-

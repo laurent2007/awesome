@@ -1,0 +1,10 @@
+
+<view class="page-container">
+  <view class='info'>
+    <text>{{direction}}</text>
+    <text>{{angle}}°</text>
+  </view>
+  <view class='picture'>
+    <image src='../../images/timg.png' style='transform: rotate({{rotate}}deg)'></image>
+  </view>
+</view>

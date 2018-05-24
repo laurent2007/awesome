@@ -3,6 +3,12 @@
 	"packOptions": {
 		"ignore": []
 	},
+	"plugins": {
+		"zxy-sdk": {
+			"version": "1.3.0",
+			"provider": "wxc6b86e382a1e3294"
+		}
+	},
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
@@ -33,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -48,6 +54,42 @@
 					"pathName": "pages/join/join",
 					"query": "",
 					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "compass",
+					"pathName": "pages/compass/compass",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "clock",
+					"pathName": "pages/clock/clock",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "person",
+					"pathName": "pages/person/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "qrcode",
+					"pathName": "pages/qrcode/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "zxy",
+					"pathName": "pages/zxy/index",
+					"query": ""
 				}
 			]
 		}

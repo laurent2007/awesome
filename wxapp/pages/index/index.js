@@ -2,6 +2,8 @@
 //获取应用实例
 const app = getApp()
 
+//var plugin = requirePlugin('zxy-sdk');
+
 Page({
   data: {
 
@@ -30,15 +32,34 @@ Page({
         title: "印度泰姬陵",
         desc: "印度泰姬陵\n看阿三看阿三"
       }
-    ]
+    ],
+    //已选择城市--初始化应该是读取历史访问中的数据
+    selectedCity: "", 
   },
-
+  selectCity:function(){
+    wx.navigateTo({
+      url: '/pages/city/city',
+    })
+  },
+  onShow:function(){
+    //获取历史访问中的城市数据 2018-05-24
+    var cityHistory = wx.getStorageSync("cityHistory") || [];
+    var selectedCity = "";
+    if (cityHistory.length > 0) {
+      selectedCity = cityHistory[0];
+    }
+    this.setData({
+      selectedCity: selectedCity,
+    })
+  },
   onLoad: function () {
-    //api获取线上数据
-    //this.getProList();
+    //判断首页数据是否抓取云端
+    const isGetDataOnCloud = app.globalData.isGetDataOnCloud;
+    if(isGetDataOnCloud){
+      this.getProList(); //api获取线上数据
+    }
   },
   toDetail:function(e){
-    //console.log(e);
     var index = e.currentTarget.dataset.index;
     console.log(index);
     var proList = this.data.proList;
@@ -51,17 +72,33 @@ Page({
   },
   getProList:function(){
     var self = this;
-    console.log(app.globalData.host);
+    //console.log(app.globalData.host);
     wx.request({
       url: app.globalData.host,
       method:'GET',
       success:function(res){
-        console.log(res);
+        //console.log(res);
         self.setData({
           proList: res.data.data
         });
+      },
+      fail:function(){
+        console.log('error,data is not loaded!')
       }
     })
+  },
+  //知晓云插入数据测试
+  createBook:function(){
+    let tableID = app.globalData.tableId;
+    let Product = new wx.BaaS.TableObject(tableID)
+    let product = Product.create()
+    let book = {
+      bookName: 'apple',
+    };
+    product.set(book).save().then(res => {
+      console.log('成功插入数据：', res)
+    }, err => {
+      console.log(err);
+    })
   }
-
 })

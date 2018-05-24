@@ -1,51 +1,59 @@
 /**index.wxss**/
-swiper{
+
+swiper {
   width: 100%;
   height: 350rpx;
 }
 
-swiper image{
+swiper image {
   display: block;
   width: 100%;
   height: 100%;
 }
 
 /*items-list*/
-.items-list{
 
+.items-list {
 }
-.pro-item{
+
+.pro-item {
   overflow: hidden;
   padding: 30rpx;
 }
-.pro-logo{
+
+.pro-logo {
   float: left;
   width: 190rpx;
   height: 190rpx;
 }
-.pro-body{
-  margin-left: 220rpx;
 
+.pro-body {
+  margin-left: 220rpx;
 }
-.pro-title{
+
+.pro-title {
   color: #212121;
   font-size: 34rpx;
   line-height: 1;
 }
-.pro-desc{
+
+.pro-desc {
   color: #9a9a9a;
   font-size: 26rpx;
   line-height: 1;
 }
-.pro-footer{
+
+.pro-footer {
   overflow: hidden;
 }
-.btn-detail{
+
+.btn-detail {
   width: 170rpx;
   height: 52rpx;
   float: left;
 }
-.btn-ask{
+
+.btn-ask {
   width: 224rpx;
   height: 52rpx;
   float: left;
@@ -53,14 +61,40 @@ swiper image{
   line-height: 1;
   padding: 0;
 }
-.btn-ask image{
+
+.btn-ask image {
   width: 100%;
   height: 100%;
 }
-.position{
-  padding: 6rpx;
-  text-align: left;
-  font-size: 28rpx;
-  color: red;
-  margin-left: 14rpx;
+
+.search-city {
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.city-button {
+  color: #fff;
+  background: #999;
+  width: 160rpx;
+  font-size: 14px;
+  margin-left: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: -10rpx;
+}
+
+.city-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-content: center;
+  align-self: center;
+}
+
+.city-text {
+  color: #999;
+  font-size: 14px;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+
 }

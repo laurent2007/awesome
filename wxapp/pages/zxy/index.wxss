@@ -1,0 +1,30 @@
+/* pages/zxy/index.wxss */
+.new-input-block{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 20rpx;
+}
+.input-row{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid gainsboro;
+  height: 70rpx;
+  align-content: center;
+  align-items: center;
+}
+.input-row label{
+  font-size: 14px;
+}
+.input-row input{
+  font-size: 16px;
+  margin-left: 20rpx;
+  width: 100%;
+}
+.red{
+  color: red;
+}
+.input-button{
+  border-bottom: 1rpx solid #fff;
+  margin-top: 20rpx;
+}

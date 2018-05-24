@@ -1,0 +1,51 @@
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <block wx:if="{{hasUserInfo}}">
+    <view wx:if="{{isChecked}}">
+      <button class='checked-button'>已经打卡</button>
+    </view>
+    <view wx:else>
+      <button class='unchecked-button' bindtap='bingGetLocationTap'>开始打卡</button>
+    </view>
+
+    <view class='status'>
+      <view class='status-item'>
+        <text>距离:{{distance}}米</text>
+      </view>
+      <view class='status-item'>
+        <text>{{locationChecked?'位置已经确认':'位置尚未确认'}}</text>
+      </view>
+      <view class='status-item'>
+        <text>{{wifiChecked?'Wifi已经确认':'Wifi尚未确认'}}</text>
+      </view>
+    </view>
+    <view class='result'>
+      <text>{{isChecked?'已经打卡':'还未打卡'}}</text>
+    </view>
+  </block>
+  <block wx:else>
+    <text>请先登录，再进行打卡！</text>
+  </block>
+  <view class='my-position'>
+    <view>
+      <text></text>
+      <map
+      id="myMap"
+      style='width=100%;height:300rpx;'
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location
+      ></map>
+    </view>
+  </view>
+</view>

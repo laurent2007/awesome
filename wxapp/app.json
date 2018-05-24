@@ -3,7 +3,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/join/join",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/compass/compass",
+    "pages/city/city",
+    "pages/clock/clock",
+    "pages/person/index",
+    "pages/qrcode/index",
+    "pages/zxy/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,12 +26,22 @@
       "selectedIconPath": "images/ic_home_pressed.png"
     },
     {
-      "pagePath": "pages/join/join",
-      "text": "加入",
+      "pagePath":"pages/compass/compass",
+      "text":"指南针",
+      "iconPath": "images/ic_home_normal.png",
+      "selectedIconPath": "images/ic_home_pressed.png"
+    },
+    {
+      "pagePath": "pages/clock/clock",
+      "text": "打卡",
+      "iconPath": "images/ic_join_normal.png",
+      "selectedIconPath": "images/ic_join_pressed.png"
+    },
+    {
+      "pagePath": "pages/person/index",
+      "text": "我的",
       "iconPath": "images/ic_join_normal.png",
       "selectedIconPath": "images/ic_join_pressed.png"
     }]
   } 
-
-  
 }

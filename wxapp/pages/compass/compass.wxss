@@ -1,0 +1,29 @@
+.page-container{
+  height: 100%;
+}
+
+.info{
+  height: 300rpx;
+  color:#011b28;
+  font-size: 56rpx;
+  text-align: center;
+  padding-top: 50rpx;
+}
+.info text{
+  display: block;
+}
+.picture{
+  width: 650rpx;
+  height: 650rpx;
+  top:50%;
+  left: 50rpx;
+  position: absolute;
+  margin-top: -300rpx;
+}
+.picture image{
+  width: 100%;
+  height: 100%;
+
+  
+}
+

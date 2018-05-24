@@ -1,0 +1,65 @@
+/* pages/person/index.wxss */
+page {
+  background: #ececec;
+}
+
+.person-info {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-top:24rpx;
+}
+
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 16rpx;
+}
+
+.person-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-content: center;
+  align-self: center;
+  padding-left: 24rpx;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 8rpx;
+}
+
+.wxname {
+  font-size: 14px;
+  color: #999;
+}
+
+.qrcode {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 180rpx;
+  margin-right: 24rpx;
+}
+
+.qrcode-image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 36rpx;
+}
+.login-content{
+  margin-top: 200rpx;
+}
+.login-btn{
+  width: 200rpx;
+  color: #fff;
+  background: #0e932e;
+  font-size: 16px;
+}
+.href{
+  color: #999;
+  font-size: 20px;
+  padding-right: 40rpx;
+  align-self: center;
+}
