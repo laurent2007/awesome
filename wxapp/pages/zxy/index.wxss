@@ -26,5 +26,15 @@
 }
 .input-button{
   border-bottom: 1rpx solid #fff;
-  margin-top: 20rpx;
+  margin-top: 50rpx;
+}
+.footer-block{
+  width: 100%;
+  margin-top: 500rpx;
+  flex:1;
+  align-content: center;
+  display: flex;
+}
+.footer-block button{
+  border: 1rpx solid #fff;
 }

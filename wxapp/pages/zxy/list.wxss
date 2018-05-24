@@ -1,0 +1,33 @@
+/* pages/zxy/list.wxss */
+
+.list-block__showLayer {
+  display: flex;
+  flex-direction: row;
+  margin: 50rpx;
+  align-content: center;
+  align-items: center;
+}
+
+.list-title {
+  font-size: 14px;
+  width: 100rpx;
+}
+
+.list-title-show {
+  font-size: 14px;
+}
+
+.list-title-edit-area {
+  font-size: 14px;
+}
+
+.list-control-edit-btn {
+  width: 150rpx;
+  font-size: 20rpx;
+}
+
+.list-control-delete-btn {
+  width: 150rpx;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+}

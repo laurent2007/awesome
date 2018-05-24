@@ -9,7 +9,8 @@
     "pages/clock/clock",
     "pages/person/index",
     "pages/qrcode/index",
-    "pages/zxy/index"
+    "pages/zxy/index",
+    "pages/zxy/list"
   ],
   "window":{
     "backgroundTextStyle":"light",

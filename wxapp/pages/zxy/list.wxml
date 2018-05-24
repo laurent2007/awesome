@@ -1,0 +1,13 @@
+<!--pages/zxy/list.wxml-->
+<view class='main-body'>
+  <view class='list-block__showLayer'>
+    <view class='list-title'>标题:</view>
+    <view class='list-title-show'>123456</view>
+    <view class='list-title-edit-area'>
+      <input value='123456' confirm-type="完成"></input>
+    </view>
+    <button class='list-control-edit-btn' type='primary' size='mini'>编辑
+    </button>
+    <button class='list-control-delete-btn' type='warn' size='mini'>删除</button>
+  </view>
+</view>
