@@ -1,0 +1,3 @@
+<view>
+  <button bindtap='uploadFile' size="mini">123</button>
+</view>

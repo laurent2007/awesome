@@ -17,17 +17,16 @@ Page({
       { icon: "avatar_0.jpg", name: "钱包" },
       { header: true },
       { icon: "avatar_0.jpg", name: "收藏" },
-      { icon: "avatar_1.jpg", name: "相册" },
+      { icon: "avatar_1.jpg", name: "相册", href: true, url: '/pages/zxy/photo' },
       { icon: "avatar_2.jpg", name: "卡包" },
-      { icon: "avatar_3.jpg", name: "表情" },
+      { icon: "avatar_3.jpg", name: "日历", href: true, url: '/pages/zxy/calendar' },
       { header: true },
       { icon: "avatar_0.jpg", name: "设置", href: true, url: '/pages/zxy/index' },
     ],
   },
   bindNavgation: function (e) {
     //console.log(e.currentTarget.dataset.href)
-    if (e.currentTarget.dataset.href)
-    {
+    if (e.currentTarget.dataset.href) {
       wx.navigateTo({
         url: e.currentTarget.dataset.url,
       })

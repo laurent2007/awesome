@@ -1,19 +1,14 @@
 //app.js
-
-
 App({
   onLaunch: function () {
-
-    // 引入 知晓云 BaaS SDK
-    //require('/utils/sdk-v1.4.0')
+    
     let clientId = this.globalData.clientId
-    //wx.BaaS.init(clientId)
 
     //引入 知晓云 SDK 插件
     wx.BaaS = requirePlugin("sdkPlugin")
-    wx.BaaS.wxExtend(wx.login,wx.getUserInfo,wx.requestPayment)
+    wx.BaaS.wxExtend(wx.login, wx.getUserInfo, wx.requestPayment)
     wx.BaaS.init(clientId)
-
+    
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -22,7 +17,6 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // console.log(res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -49,10 +43,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: "http://127.0.0.1:9000/api/microapp/getlist",
-    isGetDataOnCloud:true, //首页数据是否读取云端
-    selectedCity:null, //选中的城市
-    clientId: 'd478eeb9c3dc63455a53', // 从 BaaS 后台获取 ClientID
-    tableId: 37752, // 从 https://cloud.minapp.com/dashboard/ 管理后台的数据表中获取
+    clientId: '9d4b3df04507eb3d0988', // 从 BaaS 后台获取 ClientID
   }
 })

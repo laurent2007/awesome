@@ -13,12 +13,18 @@
   width: 100rpx;
 }
 
-.list-title-show {
-  font-size: 14px;
-}
-
+.list-title-show,
 .list-title-edit-area {
   font-size: 14px;
+  flex-basis: 40%;
+}
+
+.list-title-edit-area > input{
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #eee;
+  padding: 4 10rpx;
+  width: 240rpx;
 }
 
 .list-control-edit-btn {

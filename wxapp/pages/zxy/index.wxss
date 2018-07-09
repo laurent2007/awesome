@@ -1,11 +1,13 @@
 /* pages/zxy/index.wxss */
-.new-input-block{
+
+.new-input-block {
   display: flex;
   flex-direction: column;
   align-content: center;
   margin: 20rpx;
 }
-.input-row{
+
+.input-row {
   display: flex;
   flex-direction: row;
   border-bottom: 1rpx solid gainsboro;
@@ -13,28 +15,57 @@
   align-content: center;
   align-items: center;
 }
-.input-row label{
+
+.input-row-height {
+  height: 450rpx;
+  margin: 20rpx;
+}
+
+.input-row label {
   font-size: 14px;
 }
-.input-row input{
+
+.input-row input {
   font-size: 16px;
   margin-left: 20rpx;
   width: 100%;
 }
-.red{
+
+.uploadBtnContainer {
+  margin-left: 30rpx;
+}
+
+.uploadBtn {
+  text-align: left;
+}
+
+.imageContainer {
+  margin-left: 30rpx;
+}
+
+.imageView {
+  width: 400rpx;
+  height: 380rpx;
+  border: solid 1px #eee;
+}
+
+.red {
   color: red;
 }
-.input-button{
+
+.input-button {
   border-bottom: 1rpx solid #fff;
-  margin-top: 50rpx;
+  margin-top: 30rpx;
 }
-.footer-block{
+
+.footer-block {
   width: 100%;
-  margin-top: 500rpx;
-  flex:1;
+  margin-top: 10rpx;
+  flex: 1;
   align-content: center;
   display: flex;
 }
-.footer-block button{
+
+.footer-block button {
   border: 1rpx solid #fff;
 }

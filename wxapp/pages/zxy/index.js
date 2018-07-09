@@ -3,13 +3,15 @@
 //获取应用实例
 const app = getApp()
 
+var imageObject = null
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imageUrl: "https://cloud-minapp-15285.cloud.ifanrusercontent.com/1fSBvnQvuwceHvBK.png"
   },
 
   //表单提交
@@ -25,9 +27,25 @@ Page({
       auth_id: e.detail.value.auth_id,
       auth_name: e.detail.value.auth_name,
       auth_avatar: e.detail.value.auth_avatar,
+      imageFile: imageObject
     };
+    if (news.title == "") {
+      //console.log('Title不能为空')
+      wx.showToast({
+        title: 'Title不能为空',
+        icon: 'info',
+        duration: 1500
+      })
+      return;
+    }
     product.set(news).save().then(res => {
       console.log('成功插入数据：', res)
+      wx.showToast({
+        title: '成功插入数据',
+        icon: 'loading',
+        duration: 1500
+      })
+
     }, err => {
       console.log(err);
     })
@@ -36,12 +54,32 @@ Page({
   formReset: function () {
   },
   //ToListPage
-  navToList:function(){
+  navToList: function () {
     wx.navigateTo({
       url: '/pages/zxy/list',
     })
   },
 
+  uploadImage: function () {
+    var _this = this
+    wx.chooseImage({
+      success: function (res) {
+        let MyFile = new wx.BaaS.File()
+        let fileParams = { filePath: res.tempFilePaths[0] }
+        let metaData = { categoryName: 'NEWS' }
+        let imageUrl = ""
+        MyFile.upload(fileParams, metaData).then(res => {
+          imageObject = res.data.file;
+          imageUrl = res.data.path
+          _this.setData({
+            imageUrl: imageUrl
+          })
+        }, err => {
+          imageObject = null;
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

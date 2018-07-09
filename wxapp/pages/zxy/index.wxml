@@ -27,6 +27,18 @@
         <label>content:</label>
         <input placeholder='输入具体内容' name="content"></input>
       </view>
+      <view class='input-row'>
+        <label>图片:</label>
+        <view class='uploadBtnContainer'>
+          <button bindtap='uploadImage' size='mini' class='uploadBtn'>上传图片</button>
+        </view>
+      </view>
+      <view class='input-row input-row-height'>
+        <label>预览:</label>
+        <view class='imageContainer'>
+          <image src='{{imageUrl}}' class='imageView' mode='aspectFit' />
+        </view>
+      </view>
       <view class='input-row input-button'>
         <button size='mini' plain='true' type='primary' form-type='submit'>新 增</button>
         <button size='mini' plain='true' type='primary' form-type='reset'>重 置</button>

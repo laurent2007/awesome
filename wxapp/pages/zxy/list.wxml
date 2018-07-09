@@ -1,13 +1,15 @@
 <!--pages/zxy/list.wxml-->
 <view class='main-body'>
-  <view class='list-block__showLayer'>
+  <view class='list-block__showLayer' wx:for="{{ newsList }}" wx:key="{{ index }}">
     <view class='list-title'>标题:</view>
-    <view class='list-title-show'>123456</view>
-    <view class='list-title-edit-area'>
-      <input value='123456' confirm-type="完成"></input>
+    <view class='list-title-show' wx:if="{{!item.isEditing}}">{{item.title}}</view>
+    <view class='list-title-edit-area' wx:else>
+      <input value="{{item.title}}" confirm-type="完成" data-news-id="{{item.id}}" bindinput='bindEditBookNameInput'></input>
     </view>
-    <button class='list-control-edit-btn' type='primary' size='mini'>编辑
+    <button class='list-control-edit-btn' type='primary' size='mini' data-news-id="{{item.id}}" data-index="{{index}}" 
+    bindtap="{{item.isEditing ? 'udpateNews' : 'editNewsButtonClicked'}}" data-news-title="{{item.title}}">
+    {{ item.isEditing ? '保存' : '编辑' }}
     </button>
-    <button class='list-control-delete-btn' type='warn' size='mini'>删除</button>
+    <button class='list-control-delete-btn' type='warn' size='mini' data-news-id="{{item.id}}" bindtap='deleteNews'>删除</button>
   </view>
 </view>
